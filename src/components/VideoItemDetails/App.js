@@ -102,7 +102,7 @@ class VideoItemDetails extends Component {
   render() {
     const u = Cookies.get('jwt_token')
     if (u === undefined) {
-      return <Redirect to="/login" />
+      return <Redirect to='/login' />
     }
     const {eachvideofailure, like, dislike, eachvideoloading, eachvideo} =
       this.state
@@ -116,47 +116,47 @@ class VideoItemDetails extends Component {
             each => each.ideach === eachvideo.ideach,
           )
           const eachvideodisplay = eachvideofailure ? (
-            <div className="home-failure">
+            <div className='home-failure'>
               <img
                 src={
                   bg
                     ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
                     : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
                 }
-                alt="failure view"
-                className="failure-img"
+                alt='failure view'
+                className='failure-img'
               />
               <h1 className={bg ? 'failure-heads' : 'failure-heads1'}>
                 Oops! Something Went Wrong
               </h1>
-              <p className="failure-paras">
+              <p className='failure-paras'>
                 We are having some trouble to complete your request. please try
                 again
               </p>
               <button
-                type="button"
-                className="failure-btn"
+                type='button'
+                className='failure-btn'
                 onClick={this.eachvideoretry}
               >
                 Retry
               </button>
             </div>
           ) : (
-            <div className="each-video" data-testid="videoItemDetails">
+            <div className='each-video' data-testid='videoItemDetails'>
               <ReactPlayer
-                className="react-player"
+                className='react-player'
                 url={eachvideo.videoeach}
                 controls
               />
               <p className={bg ? 'eachvideoparas' : 'eachvideoparas1'}>
                 {eachvideo.titleeach}
               </p>
-              <div className="side-side">
-                <div className="home-siderow">
+              <div className='side-side'>
+                <div className='home-siderow'>
                   <p className={bg ? 'small' : 'small1'}>
                     {eachvideo.counteach} views
                   </p>
-                  <ul className="unordered-videoitems">
+                  <ul className='unordered-videoitems'>
                     <li className={bg ? 'small' : 'small1'}>
                       <p>
                         {' '}
@@ -167,9 +167,9 @@ class VideoItemDetails extends Component {
                     </li>
                   </ul>
                 </div>
-                <div className="Inner-header">
+                <div className='Inner-header'>
                   <ActionButton
-                    type="button"
+                    type='button'
                     active={like}
                     onClick={this.clicklike}
                   >
@@ -177,7 +177,7 @@ class VideoItemDetails extends Component {
                     Like
                   </ActionButton>
                   <ActionButton
-                    type="button"
+                    type='button'
                     active={dislike}
                     onClick={this.clickdislike}
                   >
@@ -186,7 +186,7 @@ class VideoItemDetails extends Component {
                   </ActionButton>
 
                   <ActionButton
-                    type="button"
+                    type='button'
                     active={issaved}
                     onClick={() => changingsaveditemList(eachvideo)}
                   >
@@ -195,14 +195,14 @@ class VideoItemDetails extends Component {
                   </ActionButton>
                 </div>
               </div>
-              <hr className="separator" />
-              <div className="home-siderow">
+              <hr className='separator' />
+              <div className='home-siderow'>
                 <img
                   src={eachvideo.channeleach.profileeach}
-                  alt="channel logo"
-                  className="profile"
+                  alt='channel logo'
+                  className='profile'
                 />
-                <div className="items-column">
+                <div className='items-column'>
                   <p className={bg ? 'titlename' : 'titlename1'}>
                     {eachvideo.channeleach.nameeach}
                   </p>
@@ -218,22 +218,22 @@ class VideoItemDetails extends Component {
           )
 
           return (
-            <div className="top">
+            <div className='top'>
               <Header />
 
-              <div className="home-siderow">
+              <div className='home-siderow'>
                 <SideColumn />
 
                 <div
                   className={bg ? 'eachvideocontainer' : 'eachvideocontainer1'}
                 >
                   {eachvideoloading ? (
-                    <div className="loader-container" data-testid="loader">
+                    <div className='loader-container' data-testid='loader'>
                       <Loader
-                        type="ThreeDots"
-                        color="#ffffff"
-                        height="50"
-                        width="50"
+                        type='ThreeDots'
+                        color='#ffffff'
+                        height='50'
+                        width='50'
                       />
                     </div>
                   ) : (
